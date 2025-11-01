@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon / Logo -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png"> <!-- for mobile devices -->
+    <!-- Optional fallback -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Collections - The Java</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Your Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-3">Java Collections — Methods Demo (List, Map, Queue)</h1>
+    <p class="small-muted">Interactive single-file HTML demo that shows the common methods for Java's <code class="mono">List</code>, <code class="mono">Map</code> and <code class="mono">Queue</code>. The right-side demo simulates equivalent operations in JavaScript so you can try them out.</p>
+
+    <ul class="nav nav-tabs" id="tabMenu" role="tablist">
+      <li class="nav-item" role="presentation"><button class="nav-link active" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button">List</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" id="map-tab" data-bs-toggle="tab" data-bs-target="#map" type="button">Map</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" id="queue-tab" data-bs-toggle="tab" data-bs-target="#queue" type="button">Queue</button></li>
+    </ul>
+
+    <div class="tab-content border border-top-0 p-3" id="tabContent">
+      <!-- LIST TAB -->
+      <div class="tab-pane fade show active" id="list">
+        <div class="row">
+          <div class="col-lg-6">
+            <h5>Common List methods</h5>
+            <table class="table table-sm table-striped">
+              <thead><tr><th>Method</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><code class="mono">add(E e)</code></td><td>Add element</td></tr>
+                <tr><td><code class="mono">add(int i, E e)</code></td><td>Insert at index</td></tr>
+                <tr><td><code class="mono">get(int i)</code></td><td>Get by index</td></tr>
+                <tr><td><code class="mono">set(int i, E e)</code></td><td>Replace</td></tr>
+                <tr><td><code class="mono">remove(int i)</code></td><td>Remove by index</td></tr>
+                <tr><td><code class="mono">remove(Object o)</code></td><td>Remove first occurrence</td></tr>
+                <tr><td><code class="mono">size()</code></td><td>Count elements</td></tr>
+                <tr><td><code class="mono">isEmpty()</code></td><td>Check empty</td></tr>
+                <tr><td><code class="mono">contains(Object o)</code></td><td>Contains element?</td></tr>
+                <tr><td><code class="mono">indexOf(Object o)</code></td><td>Index of first occurrence</td></tr>
+                <tr><td><code class="mono">subList(int a,int b)</code></td><td>View range</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-lg-6">
+            <h5>Live demo — List (backed by JS array)</h5>
+            <div class="mb-2"><strong>List contents:</strong> <span id="listView" class="mono">[]</span></div>
+
+            <div class="row g-2">
+              <div class="col-8"><input id="listInput" class="form-control" placeholder="value (string or number)"></div>
+              <div class="col-4"><button class="btn btn-primary w-100" onclick="listAdd()">add(e)</button></div>
+
+              <div class="col-5"><input id="listIndex" class="form-control" placeholder="index (int)"></div>
+              <div class="col-7">
+                <div class="d-grid gap-2 d-md-flex">
+                  <button class="btn btn-outline-primary" onclick="listAddAt()">add(index,e)</button>
+                  <button class="btn btn-outline-secondary" onclick="listGet()">get(index)</button>
+                  <button class="btn btn-outline-warning" onclick="listSet()">set(index,e)</button>
+                </div>
+              </div>
+
+              <div class="col-6"><button class="btn btn-danger w-100" onclick="listRemoveIndex()">remove(index)</button></div>
+              <div class="col-6"><button class="btn btn-danger btn-sm w-100" onclick="listRemoveValue()">remove(object)</button></div>
+
+              <div class="col-6"><button class="btn btn-info w-100" onclick="listContains()">contains()</button></div>
+              <div class="col-6"><button class="btn btn-info w-100" onclick="listIndexOf()">indexOf()</button></div>
+
+              <div class="col-6"><button class="btn btn-secondary w-100" onclick="listSize()">size()</button></div>
+              <div class="col-6"><button class="btn btn-secondary w-100" onclick="listClear()">clear()</button></div>
+
+              <div class="col-12 mt-2"><div id="listResult" class="p-2 small-muted"></div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP TAB -->
+      <div class="tab-pane fade" id="map">
+        <div class="row">
+          <div class="col-lg-6">
+            <h5>Common Map methods</h5>
+            <table class="table table-sm table-striped">
+              <thead><tr><th>Method</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><code class="mono">put(K k, V v)</code></td><td>Insert or replace</td></tr>
+                <tr><td><code class="mono">get(Object k)</code></td><td>Get value</td></tr>
+                <tr><td><code class="mono">remove(Object k)</code></td><td>Remove mapping</td></tr>
+                <tr><td><code class="mono">containsKey(Object k)</code></td><td>Key present?</td></tr>
+                <tr><td><code class="mono">containsValue(Object v)</code></td><td>Value present?</td></tr>
+                <tr><td><code class="mono">keySet()</code></td><td>Set of keys</td></tr>
+                <tr><td><code class="mono">values()</code></td><td>Collection of values</td></tr>
+                <tr><td><code class="mono">entrySet()</code></td><td>Set of entries</td></tr>
+                <tr><td><code class="mono">putAll(Map m)</code></td><td>Copy mappings</td></tr>
+                <tr><td><code class="mono">clear()</code></td><td>Remove all</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-lg-6">
+            <h5>Live demo — Map (backed by JS Map)</h5>
+            <div class="mb-2"><strong>Map contents:</strong> <span id="mapView" class="mono">{}</span></div>
+
+            <div class="row g-2">
+              <div class="col-5"><input id="mapKey" class="form-control" placeholder="key"></div>
+              <div class="col-5"><input id="mapVal" class="form-control" placeholder="value"></div>
+              <div class="col-2"><button class="btn btn-primary w-100" onclick="mapPut()">put</button></div>
+
+              <div class="col-6"><button class="btn btn-outline-secondary w-100" onclick="mapGet()">get</button></div>
+              <div class="col-6"><button class="btn btn-danger w-100" onclick="mapRemove()">remove</button></div>
+
+              <div class="col-6"><button class="btn btn-info w-100" onclick="mapContainsKey()">containsKey</button></div>
+              <div class="col-6"><button class="btn btn-info w-100" onclick="mapContainsVal()">containsValue</button></div>
+
+              <div class="col-6"><button class="btn btn-secondary w-100" onclick="mapKeySet()">keySet()</button></div>
+              <div class="col-6"><button class="btn btn-secondary w-100" onclick="mapValues()">values()</button></div>
+
+              <div class="col-12 mt-2"><div id="mapResult" class="p-2 small-muted"></div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- QUEUE TAB -->
+      <div class="tab-pane fade" id="queue">
+        <div class="row">
+          <div class="col-lg-6">
+            <h5>Common Queue methods</h5>
+            <table class="table table-sm table-striped">
+              <thead><tr><th>Method</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><code class="mono">add(E e)</code></td><td>Insert — throws if full</td></tr>
+                <tr><td><code class="mono">offer(E e)</code></td><td>Insert — returns false if fails</td></tr>
+                <tr><td><code class="mono">remove()</code></td><td>Remove head — throws if empty</td></tr>
+                <tr><td><code class="mono">poll()</code></td><td>Remove head — returns null if empty</td></tr>
+                <tr><td><code class="mono">element()</code></td><td>Return head — throws if empty</td></tr>
+                <tr><td><code class="mono">peek()</code></td><td>Return head — null if empty</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-lg-6">
+            <h5>Live demo — Queue (backed by JS array)</h5>
+            <div class="mb-2"><strong>Queue contents:</strong> <span id="queueView" class="mono">[]</span></div>
+
+            <div class="row g-2">
+              <div class="col-8"><input id="queueInput" class="form-control" placeholder="value to add"></div>
+              <div class="col-4"><button class="btn btn-primary w-100" onclick="queueOffer()">offer(e)</button></div>
+
+              <div class="col-6"><button class="btn btn-outline-danger w-100" onclick="queuePoll()">poll()</button></div>
+              <div class="col-6"><button class="btn btn-outline-danger w-100" onclick="queueRemove()">remove()</button></div>
+
+              <div class="col-6"><button class="btn btn-secondary w-100" onclick="queuePeek()">peek()</button></div>
+              <div class="col-6"><button class="btn btn-secondary w-100" onclick="queueElement()">element()</button></div>
+
+              <div class="col-6"><button class="btn btn-info w-100" onclick="queueSize()">size()</button></div>
+              <div class="col-6"><button class="btn btn-secondary w-100" onclick="queueClear()">clear()</button></div>
+
+              <div class="col-12 mt-2"><div id="queueResult" class="p-2 small-muted"></div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+    <div class="text-muted small">This page simulates Java collection methods using JavaScript for quick hands‑on exploration. It is not Java code — it demonstrates equivalent behavior and edge cases.</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

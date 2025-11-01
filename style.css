@@ -1,0 +1,121 @@
+body {
+  background: linear-gradient(135deg, #71eeb8, #4fb0a3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #083d3d;
+  padding: 20px;
+}
+
+h1 {
+  color: #045d56;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #4fb0a3;
+  color: #fff !important;
+  border-color: #4fb0a3 #4fb0a3 #71eeb8;
+}
+
+.nav-tabs .nav-link {
+  color: #045d56;
+}
+
+.table {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+button.btn-primary {
+  background-color: #045d56;
+  border-color: #045d56;
+}
+
+button.btn-primary:hover {
+  background-color: #03695f;
+}
+
+button.btn-outline-primary {
+  color: #045d56;
+  border-color: #045d56;
+}
+
+button.btn-outline-primary:hover {
+  background-color: #71eeb8;
+  color: #083d3d;
+}
+
+.small-muted {
+  font-size: 0.9rem;
+  color: #065b52;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+}
+
+hr {
+  border-top: 2px solid #4fb0a3;
+}
+
+
+/* ===========================
+   Responsive Layouts
+   =========================== */
+@media (max-width: 991px) { /* Tablets */
+  .container {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .table {
+    font-size: 0.95rem;
+  }
+  button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) { /* Mobiles */
+  body {
+    padding: 10px;
+  }
+  .container {
+    padding: 12px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .nav-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-tabs .nav-link {
+    margin-bottom: 4px;
+  }
+  .table {
+    font-size: 0.85rem;
+  }
+  button {
+    width: 100%;
+    margin-top: 4px;
+  }
+  .small-muted {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===========================
+   Footer / Info
+   =========================== */
+.text-muted.small {
+  text-align: center;
+  margin-top: 20px;
+}
